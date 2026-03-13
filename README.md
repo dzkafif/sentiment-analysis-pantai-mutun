@@ -53,32 +53,18 @@ Dataset dikumpulkan secara otomatis menggunakan Selenium Web Scraping.
 - Matplotlib
 - Seaborn
 
-🔄 Project Workflow
-Proyek ini dibagi menjadi beberapa tahap agar pipeline mudah dipahami dan direplikasi.
-1. Data Scraping
-Mengambil ulasan pengguna dari Google Maps menggunakan Selenium.
-File: 01_scraping.py
-Output: dataset_ulasan_mutun.csv
-2. Text Preprocessing
-Membersihkan teks ulasan dengan beberapa tahap:
-- Lowercasing
-- Menghapus emoji
-- Menghapus angka dan tanda baca
-- Normalisasi kata tidak baku
-- Stopword removal
-- Stemming menggunakan Sastrawi
-File: 02_preprocessing.py
-Output: data_bersih.csv
-3. Sentiment Labeling
-Memberikan label sentimen pada setiap ulasan menggunakan pendekatan lexicon-based sentiment analysis.
-File: 03_labeling.py
-Output: review_google_maps_sentiment_analysis.csv
-4. Machine Learning Model
-Melatih model Naive Bayes menggunakan fitur TF-IDF untuk memprediksi sentimen ulasan.
-File:04_naive_bayes.py
-Output:
-- Model prediksi sentimen
-- Evaluasi model
+## 🔄 Project Workflow
+1. **Data Scraping**  
+Mengambil ulasan Google Maps menggunakan Selenium.
+
+2. **Text Preprocessing**  
+Lowercasing, cleaning text, stopword removal, dan stemming menggunakan Sastrawi.
+
+3. **Sentiment Labeling**  
+Memberikan label sentimen menggunakan pendekatan lexicon-based.
+
+4. **Machine Learning Model**  
+Melatih model Multinomial Naive Bayes menggunakan TF-IDF.
 
 ⭐ Special Feature: Negation Handling
 Pada tahap preprocessing, program dimodifikasi agar tidak menghapus kata negasi seperti:
@@ -92,12 +78,9 @@ Tanpa teknik ini, kalimat bisa berubah makna menjadi: "bagus"
 yang dapat menyebabkan kesalahan klasifikasi sentimen.
 
 📈 Data Visualization
-- Beberapa visualisasi digunakan untuk memahami pola sentimen pada ulasan.
-- Sentiment Distribution
-- Grafik distribusi jumlah ulasan berdasarkan sentimen.
-- Confusion Matrix
-- Digunakan untuk mengevaluasi performa model klasifikasi.
-- Visualisasi dibuat menggunakan Matplotlib dan Seaborn.
+![Sentiment Distribution](images/sentiment_distribution.png)
+
+![Confusion Matrix](images/confusion_matrix.png)
 
 🚀 How to Run the Project
 1. Clone Repository
@@ -114,7 +97,7 @@ python 03_labeling.py
 python 04_naive_bayes.py
 
 Author:
-Muhammad Dzakwan Afif
+Muhammad Dzakwan Afifs
 Information Systems Student
 
 GitHub:
