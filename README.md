@@ -78,9 +78,11 @@ Tanpa teknik ini, kalimat bisa berubah makna menjadi: "bagus"
 yang dapat menyebabkan kesalahan klasifikasi sentimen.
 
 📈 Data Visualization
-![Sentiment Distribution](images/sentiment_distribution.png)
+### Sentiment Distribution
+![Sentiment Distribution](sentiment_distribution.png)
 
-![Confusion Matrix](images/confusion_matrix.png)
+### Confusion Matrix
+![Confusion Matrix](confusion_matrix.png)
 
 🚀 How to Run the Project
 1. Clone Repository
