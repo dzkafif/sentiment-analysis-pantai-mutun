@@ -13,14 +13,26 @@ Pipeline proyek ini mencakup:
 - Pelatihan model Machine Learning
 - Evaluasi model dan visualisasi hasil
 
+## 🏆 Model Performance & Key Insights
+
+### Kinerja Model (Mengapa Naive Bayes?)
+Algoritma **Multinomial Naive Bayes** dipilih karena sangat efisien dan handal dalam menangani data teks berdimensi tinggi (matriks TF-IDF).
+* **Akurasi Model:** Mencapai **[67.7%]** pada data uji.
+* Model terbukti mampu membedakan sentimen positif dan negatif dengan baik, yang dibuktikan melalui visualisasi *Confusion Matrix*.
+
+### Temuan Bisnis (Business Insights)
+Dari ekstraksi ratusan ulasan pengunjung Pantai Mutun, ditemukan beberapa pola utama:
+* **Kekuatan Utama (Positif):** Mayoritas pengunjung sangat menyukai **[pemandangan yang indah]**, menjadikannya nilai jual utama tempat wisata ini.
+* **Area Perbaikan (Negatif):** Keluhan utama yang mendominasi sentimen negatif berpusat pada **[harga tiket yang mahal]**. Insight ini dapat menjadi rekomendasi strategis bagi pengelola untuk meningkatkan kepuasan pengunjung.
+
 📊 Dataset
 Sumber Data: Google Maps Reviews
 Lokasi: Pantai Mutun, Lampung
-Jumlah Data: ±100 ulasan pengunjung
+Jumlah Data: ±150 ulasan pengunjung
 Distribusi sentimen ulasan:
-- Positif : 41
-- Negatif : 23
-- Netral : 41
+- Positif : 60
+- Negatif : 56
+- Netral : 35
 Dataset dikumpulkan secara otomatis menggunakan Selenium Web Scraping.
 
 🛠 Tools & Technologies

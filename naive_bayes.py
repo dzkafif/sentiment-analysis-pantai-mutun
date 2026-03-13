@@ -11,7 +11,7 @@ df = pd.read_csv('review_google_maps_sentiment_analysis.csv')
 
 # Naive Bayes prediction & Evaluation
 print("1. Mengubah teks menjadi vektor angka (TF-IDF)...")
-vectorizer = TfidfVectorizer(max_features=1000)
+vectorizer = TfidfVectorizer(max_features=1000, min_df=2, max_df=0.9)
 
 # Validasi df['text_final'] tidak mengandung nilai 'Nan/Float' sebelum ke proses vektor.
 df['text_final'] = df['text_final'].fillna('')

@@ -22,25 +22,25 @@ url = "https://www.google.com/maps/place/Pantai+Mutun/@-5.5146608,105.2602725,17
 
 driver.get(url)
 print("(1-20 detik)")
-time.sleep(13)
+time.sleep(10)
 
 print("Mencoba klik tombol 'Urutkan'...")
 try:
     # Cari tombol "Urutkan ulasan"
-    sort_btn = WebDriverWait(driver, 20).until(
+    sort_btn = WebDriverWait(driver, 18).until(
         EC.element_to_be_clickable((By.XPATH, "//button[@aria-label='Urutkan ulasan' or @aria-label='Sort reviews' or contains(@data-value, 'Urutkan')]")))
     driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", sort_btn)
     time.sleep(1)
     driver.execute_script("arguments[0].click();", sort_btn)
     print("Tombol 'Urutkan' berhasil diklik! Menunggu menu pop-up muncul...")
     time.sleep(3) 
-    newest_opt = WebDriverWait(driver, 15).until(
+    newest_opt = WebDriverWait(driver, 13).until(
         EC.presence_of_element_located((By.XPATH, "//div[@role='menuitemradio' and (contains(., 'Terbaru') or contains(., 'Newest'))]")))
     
     # Klik opsi Terbaru
     driver.execute_script("arguments[0].click();", newest_opt)
     print("Berhasil memilih opsi 'Terbaru'!")
-    time.sleep(8) 
+    time.sleep(6) 
 
 except Exception as e:
     print(f"❌ Gagal melakukan sorting. Error: {e}")
@@ -62,7 +62,7 @@ current_count = 0
 max_attempts = 50
 stuck_counter = 0 
 
-while current_count < 350 and max_attempts > 0:
+while current_count < 500 and max_attempts > 0:
     driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", scroll_pane)
     time.sleep(2) 
     
@@ -101,8 +101,8 @@ while current_count < 350 and max_attempts > 0:
     
     print(f"Ulasan ter-load: {current_count}")
 
-    if current_count >= 350:
-        print("✅ Target 350 ulasan tercapai!")
+    if current_count >= 500:
+        print("✅ Target 500 ulasan tercapai!")
         break
 
     # Cek apakah setelah scroll angkanya nambah atau jalan di tempat
@@ -118,7 +118,7 @@ while current_count < 350 and max_attempts > 0:
     last_height = current_count
     max_attempts -= 1
 
-for card in review_cards[:350]:
+for card in review_cards[:500]:
     try:
         try:
             name_elem = card.find_element(By.XPATH, './/button[contains(@aria-label, "Foto")]')

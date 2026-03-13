@@ -16,7 +16,7 @@ kata_positif = {"bagus","baik","nyaman","ramah","mantap","enak","bersih","murah"
     "puas","recommended","rekomendasi","lezat","cepat","keren","top"}
 
 kata_negatif = {"buruk","jelek","mahal","lama","kecewa","kotor","parah","lambat",
-    "tidak","kurang","mengecewakan","ribet","pelit,"}
+    "tidak","kurang","mengecewakan","ribet","pelit","sulit"}
 
 # FUNGSI PELABELAN
 def label_sentimen(text):
